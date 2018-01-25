@@ -1,0 +1,59 @@
+/*
+ * Basic styles by primary and secondary tabs.
+ */
+
+div.tabs{
+  .outside-tb;
+}
+
+ul.tabs{
+  background-color: #ffffff;
+  border: 1px solid #f2f2f2;
+  box-shadow: 0px 0px 1px 0 #cccccc;
+  .radius-base;
+  clear:both;
+  display:block;
+  margin: 0;
+  padding: 0;
+  overflow:hidden;
+  li{
+    display:block;
+    float: left;
+    overflow: hidden;
+    a{
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      display: block;
+      overflow: hidden;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 1;
+      .text-ellipsis();
+      max-width: 160px;
+      min-width: 60px;
+    }
+  }
+}
+
+
+/* primary menu */
+ul.primary{
+  margin-bottom: 7px;
+  li{
+    margin: 1px;
+    &.active{
+    }
+    a{
+      .radius-base;
+      padding: 14px 21px;
+      &:hover{
+        background-color: #f1f1f1;
+      }
+      &.active{
+        .opacity(1);
+        background-color: @site-base;
+        color:#000000;
+      }
+    }
+  }
+}

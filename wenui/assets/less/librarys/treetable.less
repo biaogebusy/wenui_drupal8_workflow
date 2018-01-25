@@ -1,0 +1,60 @@
+/* ============
+   Select2
+   ============ */
+@import (less) "../../../bower_components/jquery-treetable/css/jquery.treetable.css";
+
+table.tree-table{
+  caption {
+    font-size: @font-size-small;
+    font-weight: bold;
+    margin-bottom: .2em;
+  }
+  background-color: #ffffff;
+  tr{
+    th,td{
+      border-left: none;
+      border-right: none;
+      border-bottom-width:2px;
+      padding: 10px 14px;
+    }
+    span.indenter{
+      a{
+        &:before{
+          .icon;
+          float: left;
+          margin-top: 2px;
+          font-size:@font-size-mini;
+        }
+      }
+    }
+    &.collapsed{
+      span.indenter{
+        a{
+          &:before{
+            content:'\e612';
+          }
+        }
+      }
+    }
+    &.expanded{
+      span.indenter{
+        a{
+          &:before{
+            content:'\e613';
+          }
+        }
+      }
+    }
+  }
+}
+
+.panel-table{
+  table.tree-table{
+    tr{
+      th,td{
+        border-left: none;
+        border-right: none;
+      }
+    }
+  }
+}

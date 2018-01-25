@@ -1,0 +1,137 @@
+{
+  "name": "wenui",
+  "version": "3.1.0",
+  "dir": {
+    "source": "assets",
+    "app": "build"
+  },
+  "drupal": {
+    "host": "wenroo.sh",
+    "folder": "default",
+    "theme": {
+      "path": "/docroot/theme",
+      "name": "wenui"
+    }
+  },
+  "scripts": {
+    "watch-js": "watchify $npm_package_drupal_theme_path/$npm_package_drupal_theme_name/$npm_package_dir_source/$npm_package_source_index_script -t babelify -o $npm_package_drupal_theme_path/$npm_package_drupal_theme_name/$npm_package_dir_app/$npm_package_source_build_script -dv",
+    "watch-css-npm": "catw -w -c 'lessc -' $npm_package_drupal_theme_path/$npm_package_drupal_theme_name/$npm_package_dir_source/$npm_package_source_index_less -o $npm_package_drupal_theme_path/$npm_package_drupal_theme_name/$npm_package_dir_app/$npm_package_source_build_css -v",
+    "watch-css":"gulp watch:less",
+    "watch": "gulp watch:less & npm run watch-js",
+    "build-css": "lessc $npm_package_drupal_theme_path/$npm_package_drupal_theme_name/$npm_package_dir_source/$npm_package_source_index_less | uglifycss > $npm_package_drupal_theme_path/$npm_package_drupal_theme_name/$npm_package_dir_app/$npm_package_source_build_css",
+    "build-js": "browserify $npm_package_drupal_theme_path/$npm_package_drupal_theme_name/$npm_package_dir_source/$npm_package_source_index_script | uglifyjs -c -m > $npm_package_drupal_theme_path/$npm_package_drupal_theme_name/$npm_package_dir_app/$npm_package_source_build_script",
+    "build-drupal": "browserify $npm_package_drupal_theme_path/$npm_package_drupal_theme_name/js/drupal.js | uglifyjs -c -m > $npm_package_drupal_theme_path/$npm_package_drupal_theme_name/js/drupal.min.js",
+    "build-images": "gulp images",
+    "build": "npm run build-css & npm run build-js",
+    "wenui": "npm ln wenui ./wenui",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      [
+        "resolver",
+        {
+          "resolveDirs": [
+            "wenui/assets/scripts"
+          ]
+        }
+      ]
+    ]
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "source": {
+    "index": {
+      "html": "index.html",
+      "less": "less/index.less",
+      "script": "scripts/index.js"
+    },
+    "build": {
+      "script": "init.js",
+      "css": "init.css"
+    },
+    "less": [
+      "assets/less/*.less",
+      "assets/less/**/*.less",
+      "assets/less/**/**/*.less",
+      "assets/less/**/**/**/*.less"
+    ],
+    "scripts": [
+      "scripts/*.js",
+      "scripts/**/*.js"
+    ],
+    "images": [
+      "images/"
+    ]
+  },
+  "wenui": {
+    "less": [
+      "./wenui/assets/less/*.less",
+      "./wenui/assets/less/**/*.less",
+      "./wenui/assets/less/**/**/*.less",
+      "./wenui/assets/less/**/**/**/*.less"
+    ]
+  },
+  "author": "hello@wenroo.com",
+  "license": "ISC",
+  "description": "Templates - Html,Drupal,Symfony",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wenroo/wenui.git"
+  },
+  "keywords": [
+    "wenroo",
+    "weixin",
+    "drupal",
+    "symfony",
+    "tempaltes"
+  ],
+  "bugs": {
+    "url": "https://github.com/wenroo/wenui/issues"
+  },
+  "homepage": "https://github.com/wenroo/wenui",
+  "dependencies": {
+    "babelify": "^8.0.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-plugin-resolver": "^1.1.0",
+    "babel-resolver": "^1.1.0",
+    "bootstrap": "^3.3.7",
+    "browserify": "^13.3.0",
+    "del": "^2.2.2",
+    "fs": "0.0.1-security",
+    "fs-extra": "^4.0.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-exec": "^2.1.3",
+    "gulp-html-version": "^1.0.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-less": "^3.3.2",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-replace-name": "^1.0.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-version-append": "^0.2.0",
+    "normalize.css": "^7.0.0",
+    "path": "^0.12.7",
+    "require-dir": "^0.3.2",
+    "uglifycss": "0.0.27",
+    "uglifyjs": "^2.4.10",
+    "underscore": "^1.8.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
+  },
+  "devDependencies": {
+    "jquery": "^3.2.1"
+  }
+}

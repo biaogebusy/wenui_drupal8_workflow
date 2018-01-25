@@ -1,0 +1,81 @@
+/* =============================================================================
+   Pager
+   ========================================================================== */
+.pager{
+  .pager-items{
+    display: inline-block;
+    .pager-item{
+      display: inline;
+      a{
+        .g-in;
+        border:1px solid @link-color-light;
+        .btn-base;
+        display: block;
+        float: left;
+        font-size: 12px;
+        margin-left: -1px;
+        .inside-min-tb;
+        .inside-lr;
+        &:hover{
+          background-color: @link-color-light;
+        }
+        &.active{
+          background-color: transparent;
+          color:@link-color;
+        }
+        i{
+        }
+      }
+      &.is-active{
+        a{
+          background-color: transparent;
+          color:@link-color;
+        }
+      }
+      &:first-child{
+        a{
+          .radius-base(3px 0 0 3px);
+        }
+      }
+      &:last-child{
+        a{
+          .radius-base(0 3px 3px 0);
+        }
+      }
+    }
+    .pager-item-ellipsis{
+      .inside-min-tb;
+      .inside-lr;
+      float: left;
+      border: 1px solid @link-color;
+      margin-left: -1px;
+    }
+    @media (max-width: @screen-sm-min){
+      .clearfix;
+      display: block;
+      .pager-item{
+        width: 25%;
+        float: left;
+        margin-right: -1px;
+        a{
+          width: 100%;
+          padding: 7px;
+          float: none;
+        }
+      }
+      .pager-item-number{
+        display: none;
+      }
+      &:first-child{
+        a{
+          .radius-base(3px 3px 0 0);
+        }
+      }
+      &:last-child{
+        a{
+          .radius-base(0 0 3px 3px);
+        }
+      }
+    }
+  }
+}

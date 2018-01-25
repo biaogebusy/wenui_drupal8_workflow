@@ -1,0 +1,76 @@
+// @import (less) "../../../bower_components/jQuery.mmenu/dist/jquery.mmenu.all.css";
+// Set Core style Drupal Library
+
+
+
+.mm-wrapper{
+	.mm-menu{
+		width: 320px !important;
+		max-width: 100% !important;
+    .transition(width .4s ease);
+		@media (max-width: @screen-sm-min){
+    	.transition(width .4s ease);
+	  	width: 100% !important;
+	  }
+	}
+	.mm-navbar-size-1{
+		background-color: #633869;
+		position: fixed;
+		left:auto;
+		padding: 0;
+		width: 40px;
+		.mm-close{
+			left:auto;
+		}
+	}
+	#mm-blocker{
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+}
+.mm-navbars-top{
+		background-color: #633869;
+}
+.mm-hasnavbar-top-1 .mm-panels{
+	top:0;
+}
+
+.mm-clear:after, .mm-close:after{
+	right: 33px;
+}
+.mm-clear:before, .mm-close:before{
+	right: 17px;
+}
+.mm-clear:after, .mm-clear:before,
+.mm-close:after, .mm-close:before{
+  width: 11px;
+  height: 11px;
+}
+
+html.mm-right.mm-opening{
+	body.mm-wrapper{
+	  .mm-menu.mm-opened~.mm-slideout{
+			@media (min-width: @screen-sm){
+				.transform(translate3d(-320px,0,0));
+			}
+			@media (max-width: @screen-sm-min){
+				.transform(translate3d(-100%,0,0));
+			}
+		}
+	}
+}
+
+
+
+html.mm-opened{
+	.mm-navbar{
+		background-color: @site-base;
+		color:#ffffff;
+		a{
+			color:#ffffff;
+		}
+		.mm-btn:after,
+		.mm-btn:before{
+			border-color:#ffffff;
+		}
+	}
+}

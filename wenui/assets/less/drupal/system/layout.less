@@ -1,0 +1,52 @@
+/* ===========================================================
+-- Drupal system Layout Style
+-- by wenroo
+-------------------------------------------------------------- */
+
+details{
+	.radius-base(7px);
+	.outside-tb;
+	.clearfix;
+	display: block;
+	border:1px solid @border-color;
+	summary{
+		.btn;
+		.radius-base(7px 7px 0 0);
+		.text-shadow(0 1px 0 #fff);
+		.inside-min;
+		border-bottom:1px solid @border-color;
+		text-align: left;
+		display: block;
+		background-color: @bg-lighter;
+	}
+	.details-wrapper{
+		.inside;
+		fieldset{
+		  &.form-wrapper{
+				margin-top: 0;
+		    fieldset{
+					.radius-base(7px 7px 0 0);
+		    	background-color: @bg-lighter;
+		      .outside-t;
+		      legend{
+		      	.fieldset-legend{
+		    			background-color: @bg-light;
+		      		font-size: @font-size;
+							.radius-base(7px 7px 0 0);
+		      		.inside-min-tb;
+		      		.inside-lr;
+		      		display: block;
+		      	}
+		      }
+		      .fieldset-wrapper{
+		      	.inside-min;
+		      }
+		    }
+		  }
+		}
+	}
+	&.form-wrapper{
+
+	}
+}
+

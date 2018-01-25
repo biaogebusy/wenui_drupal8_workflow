@@ -1,0 +1,33 @@
+{% if content %}
+<div {{attributes.addClass('layout-media-card','clearfix')}}>
+
+  {% if content.layout_media %}
+    <div class="media">
+      {{ content.layout_media }}
+    </div>
+  {% endif %}
+
+  <div class="media-content">
+
+    {% if content.layout_title %}
+      <div class="title media-title">
+          {{ content.layout_title }}
+      </div>
+    {% endif %}
+
+    {% if content.layout_time %}
+      <div class="time media-time">
+          {{ content.layout_time }}
+      </div>
+    {% endif %}
+
+    {% if content.layout_body %}
+      <div class="body media-body">
+          {{ content.layout_body }}
+      </div>
+    {% endif %}
+
+  </div>
+
+</div>
+{% endif %}

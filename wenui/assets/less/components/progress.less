@@ -1,0 +1,37 @@
+/* =============================================================================
+   Progress
+   -- @progress-height
+   -- @progress-color
+   -- @progress-border
+   -- @progress-track-bg
+   -- @progress-bar-bg
+   ========================================================================== */
+.progress{
+  .progress-label{
+    margin-bottom: 3px;
+    font-weight: bold;
+    padding-left: 3px;
+  }
+  .progress-track{
+    background-color: @progress-track-bg;
+    border: @progress-border;
+    position: relative;
+    .radius-base;
+    overflow: hidden;
+    .progress-bar{
+      .radius-base;
+      background-color: @progress-bar-bg;
+      height: @progress-height;
+    }
+  }
+  .progress-percentage{
+    color: @progress-color;
+    position: absolute;
+    line-height: @progress-height;
+    .inside-min-lr;
+  }
+  .progress-description{
+    color: @text-color-lighter;
+    padding: 3px;
+  }
+}

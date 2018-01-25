@@ -1,0 +1,73 @@
+@import "./layout.less";
+@import "./page.less";
+@import "./block.less";
+@import "./form.less";
+@import "./menu.less";
+
+// Base
+div,ul,ol,li{
+	.g-in;
+}
+
+.btn{
+	i{
+		.icon;
+	}
+}
+.disabled{
+	cursor: default;
+}
+
+
+/* -----------------------
+	 Theme Default Style
+----------------------- */
+// Page
+h1{
+	&.page-title{
+		.outside-b;
+	}
+}
+
+// Header
+
+#site-logo{
+	.f-l;
+	.inside-min-lr;
+	.inside-min-t;
+	.inside-b;
+	background-color: @link-color;  // Custom color @site-blue <- let.less
+	position: relative;
+	margin-bottom: -@space-min;
+	margin-top: -@space-min;
+	max-width: @space * 2;
+	img{
+		width: 100%;
+	}
+	&:hover{
+		background-color: lighten(@site-base, 7.5%);
+	}
+}
+
+#site-name{
+	display: block;
+	font-size: @h2;
+	margin-left: @space * 5;
+	margin-top: @space / 4;
+}
+#site-slogan{
+	margin-top: @space / 4;
+	display: block;
+	color:@text-color-lighter;
+	font-size: @font-size-mini;
+	margin-left: @space * 5;
+}
+
+
+
+
+
+/* - Math Default Height Fun ---------*/
+#footer{
+	visibility: hidden;
+}

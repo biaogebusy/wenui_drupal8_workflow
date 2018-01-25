@@ -1,0 +1,422 @@
+//@import "./admin/form.less";
+.glass{
+	background-color: rgba(0, 0, 0, 0.5);
+	.outside-b;
+	.radius-base;
+}
+.glass-title{
+	border-bottom:1px solid rgba(0, 0, 0, 0.2);
+	.inside;
+}
+.glass-inner{
+	.inside;
+}
+
+.theme-default{
+	.theme-info__header{
+		font-weight: normal;
+	}
+}
+
+.admin-requirements,
+.admin-required{
+	color:#ffffff;
+}
+
+// system theme page
+#system-themes-page{
+	.system-themes-list{
+		.glass;
+    .make-row();
+    margin-left: 0;
+    margin-right: 0;
+		.system-themes-list__header{
+			.glass-title;
+		}
+		.theme-selector{
+			.make-sm-column(12);
+			.make-md-column(6);
+			.inside;
+		}
+		.theme-default{
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+		.theme-admin{
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+		.theme-selector{
+			img{
+				.g-in;
+				max-width: 50%;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 7px;
+			}
+			.screenshot,
+			.no-screenshot{
+				.radius-base;
+				background-color: #ffffff;
+				border:2px solid #ffffff;
+			}
+			.screenshot{
+
+			}
+			.no-screenshot{
+
+			}
+			.theme-info{
+				width: 50%;
+				float: left;
+				padding:0 7px;
+				.theme-info__header{
+					margin-bottom: 7px;
+				}
+			}
+			.operations{
+				li{
+					border-color:@site-base;
+				}
+			}
+		}
+	}
+	.system-themes-list-uninstalled{
+		padding-top: 0;
+		border-top:7px solid @state-info-border;
+		.theme-selector{
+			background-color: rgba(255, 255, 255, 0.1);
+			.make-md-column(3);
+			.make-sm-column(4);
+			.make-xs-column(12);
+			.inside-lr;
+			img{
+				max-width: 100%;
+			}
+			.theme-info{
+				float: none;
+				width: 100%;
+				padding: 0;
+			}
+		}
+	}
+}
+form#system-themes-admin-form{
+		background-color: transparent;
+		padding: 0;
+}
+
+// Form
+.layout-node-form{
+	.layout-region-node-main{
+		.glass;
+		.inside;
+		width: 63%;
+		margin-right: 2%;
+	}
+	.layout-region-node-secondary{
+		.entity-meta__header{
+			margin-top: 0;
+		}
+	}
+}
+
+
+// Admin
+.page-admin{
+	.block-system{
+		>form{
+			.glass;
+			.inside;
+			&.search-form,
+			&.user-admin-settings,
+			&.system-performance-settings,
+			&.locale-translate-filter-form,
+			&.block-admin-display-form,
+			&.system-site-information-settings{
+				background-color: transparent;
+				padding: 0;
+			}
+			&.system-theme-settings,
+			&.locale-translate-edit-form{
+				padding: 0;
+				.form-actions{
+					.inside;
+				}
+			}
+		}
+		>table{
+			background-color: rgba(0, 0, 0, 0.5);
+			.radius-base;
+		}
+	}
+	.views-exposed-form{
+		border-top:3px solid @state-success-border;
+		.inside;
+		.glass;
+		.clearfix;
+		.form-item{
+			float: left;
+			.outside-r;
+		}
+		.form-actions{
+			padding-top: 20px;
+			.form-submit{
+				padding-left: 21px;
+				padding-right: 21px;
+			}
+		}
+	}
+	.views-form{
+		border-top:3px solid @state-success-text;
+		.glass;
+		.clearfix;
+		form{
+			>.form-item{
+				.outside;
+			}
+		}
+		.form-item-action{
+			float: left;
+			label{
+				margin-bottom: 0;
+				float: left;
+				.outside-r;
+				line-height: @element-height;
+				font-size: @font-size-larg;
+			}
+		}
+		.form-actions{
+			float: left;
+			.outside;
+		}
+	}
+	table{
+		width: 100%;
+		border-collapse: collapse;
+		background-color: rgba(0, 0, 0, 0.05);
+		color:#ffffff;
+		thead{
+			tr{
+				th{
+					text-align: left;
+					.inside;
+					background-color: rgba(0, 0, 0, 0.2);
+				}
+			}
+		}
+		tbody{
+			tr{
+				td{
+					background-color: transparent;
+					&.description{
+						padding: 7px 14px;
+					}
+				}
+				&:nth-child(even),
+				&.even{
+					td{
+						background-color: rgba(255, 255, 255, 0.1)
+					}
+				}
+			}
+		}
+		&#blocks{
+			background-color: rgba(0, 0, 0, 0.5);
+			tbody{
+				tr{
+					&.region-title{
+						td{
+							.inside-tb;
+							background-color: @state-info-text;
+							.button{
+								.outside-l;
+								background-color: #ffffff;
+								color: @state-info-text;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.list-group{
+			background-color: transparent;
+			.list-group-item{
+				.list-group__link{
+					.radius-base(3px 0 0 3px);
+					a{
+						.btn;
+						width: 100%;
+						padding: 14px;
+						.radius-base;
+						background-color: @link-color;
+						color:#ffffff;
+						font-size: @font-size-larg;
+						&:before{
+							.icon;
+							content:'\e68d';
+							display: block;
+							margin-left: auto;
+							margin-right: auto;
+							font-size: 200%;
+							margin-bottom: 7px;
+						}
+					}
+				}
+				.list-group__description{
+					.radius-base(0 3px 3px 0);
+					margin-left: 0;
+					padding-left: 21px;
+				}
+			}
+			.even{
+				background-color: rgba(0, 0, 0, 0.5);
+				td{
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+.locale-translate-filter-form{
+	#edit-filters{
+		.details-wrapper{
+			.form-actions{
+				padding-top: 0;
+				margin-top: 35px;
+			}
+		}
+	}
+}
+
+// User form
+.page-user{
+	form{
+		&.shortcut-set-switch{
+			.inside;
+			.glass;
+		}
+	}
+	.user-form{
+		.glass;
+		.inside;
+		div.password-suggestions{
+			ul{
+				li{
+					color: #666666;
+				}
+			}
+		}
+	}
+	.node-confirm-form{
+		text-align: center;
+		font-size: @font-size-larger;
+		.glass;
+		.inside;
+		padding-top: 35px;
+		.form-actions{
+			margin-top: 35px;
+			margin-bottom: 0;
+			a{
+				font-size: @font-size-larg;
+				.btn;
+				.btn-gray;
+			}
+		}
+	}
+}
+
+
+// Page devel
+.page-devel{
+	#content{
+		height: 100%;
+		.block-system{
+			height: 100%;
+			details{
+				&.devel-dumper{
+					height: 100%;
+				}
+			}
+		}
+	}
+}
+
+// Extend Page
+details{
+	&.package-listing{
+		.details-wrapper{
+			padding: 0;
+			color:@text-color;
+			details{
+				background-color: transparent;
+				summary{
+					background-color: transparent;
+					border: none;
+					.g-in;
+					.module-description{
+					}
+				}
+			}
+		}
+	}
+}
+.system-modules{
+	label{
+		color:@text-color;
+	}
+	table{
+		width: 100%;
+		margin: 0;
+		td{
+			&.checkbox{
+				.form-item{
+					margin: 0 7px 0 14px;
+				}
+			}
+			&.description{
+			}
+		}
+	}
+}
+.system-modules-uninstall label{
+	color:@text-color;
+}
+
+// Config
+.btn-group-system_compact{
+	text-align: right;
+	a{
+		.btn;
+		.btn-base;
+	}
+}
+.layout-column{
+	.panel{
+		.glass;
+		.panel__title{
+			.glass-title;
+		}
+		.panel__content{
+			.inside-lr;
+			.list-group{
+				.list-group__link{
+					width: 30%;
+					a{
+						font-size: @font-size;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+/* - core/modules/color/css/color.admin.css ---- Overwrite */
+.color-form{
+  .form-item{
+    height:3.2em;
+  }
+}

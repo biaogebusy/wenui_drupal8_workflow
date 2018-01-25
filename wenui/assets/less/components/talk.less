@@ -1,0 +1,77 @@
+/* ========================================
+   Card Display
+   ======================================== */
+.talk{
+  border: 1px solid @border-color;
+  .radius-base(5px);
+  background-color: #ffffff;
+  padding: 10px 20px;
+  &.talk-left,
+  &.talk-top,
+  &.talk-bottom{
+    position: relative;
+    background-color: #ffffff;
+    overflow: visible;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border:1px solid @border-color;
+      background-image: -webkit-linear-gradient(45deg, #ffffff, #ffffff 50%, transparent 50%);
+      background-image: -moz-linear-gradient(45deg, #ffffff, #ffffff 50%, transparent 50%);
+      background-image: -o-linear-gradient(45deg, #ffffff, #ffffff 50%, transparent 50%);
+      background-image: linear-gradient(45deg, #ffffff, #ffffff 50%, transparent 50%);
+      background-color: transparent;
+
+      -webkit-transform-origin: 50% 50% 0;
+      -moz-transform-origin: 50% 50% 0;
+      -ms-transform-origin: 50% 50% 0;
+      -o-transform-origin: 50% 50% 0;
+      transform-origin: 50% 50% 0;
+    }
+  }
+  &.talk-left{
+    margin-left: 1.5px;
+    &:before{
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 50%;
+      left: 0;
+      border-width:0 0 1px 1px;
+
+      margin-left: 9px;
+      margin-top: 9px;
+    }
+  }
+  &.talk-bottom{
+    margin-bottom: 1.5px;
+    &:before{
+      border-width:0 0 1px 1px;
+      bottom: -6px;
+      left: 28px;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  }
+  &.talk-top{
+    margin-top:15px;
+    &:before{
+      top: 0;
+      left: 20px;
+      margin-top:-5.9px;
+      border-width:0 0 1px 1px;
+      -webkit-transform: rotate(135deg);
+      -moz-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+      -o-transform: rotate(135deg);
+      transform: rotate(135deg);
+    }
+  }
+}

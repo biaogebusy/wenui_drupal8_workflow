@@ -1,0 +1,44 @@
+// @import "../../../../bower_components/bootstrap-datepicker/less/datepicker.less";
+// @import "../../../../bower_components/bootstrap-datepicker/less/datepicker3.less";
+@import (less) "../../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css";
+.input-daterange{
+  .form-text{
+    background-image: url(../images/icon-date.png);
+    background-repeat: no-repeat;
+    background-position:95% center;
+    width: 110px !important;
+    padding-right: 25px;
+  }
+  .input-group-addon{
+    display: block;
+    float: left;
+  }
+}
+.datepicker-dropdown{
+  min-width: 160px;
+  font-size: @font-size-mini;
+  margin-top: 56px;
+  table{
+    font-size: @font-size-mini;
+    td,th{
+      padding: 5px;
+    }
+  }
+}
+
+.datepicker{
+  table{
+    tr{
+      td{
+        &.selected{
+          &:hover{
+          }
+        }
+        &.disabled{
+          &:hover{
+          }
+        }
+      }
+    }
+  }
+}

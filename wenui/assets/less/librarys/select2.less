@@ -1,0 +1,70 @@
+/* ============
+   Select2
+   ============ */
+@import (less) "bower_components/select2/dist/css/select2.min.css";
+
+.select2-container--default{
+  letter-spacing: normal;
+	  width: 100% !important;
+  .font-size_line-height(8,15);
+	.select2-selection--single {
+    margin: 0;
+    height: 32px;
+    color: #88827b;
+	  background-color: #fff;
+	  border: 1px solid #aaa;
+	  width: 100%;
+	  .radius-base(0);
+	  .select2-selection__placeholder{
+	  	color: #999;
+	  }
+	  .select2-selection__rendered{
+	  	line-height: 32px;
+	  }
+	  .select2-selection__arrow{
+	  	width: 32px;
+	  	height: 32px;
+    	top: 0;
+	  	text-align: center;
+	  	border-left: 1px solid #aaa;
+	  	b{
+	  		display: none;
+	  	}
+	  	&:before{
+	  		content:'\e605';
+	  		.icon;
+	  		line-height: 30px;
+	  		text-align: center;
+	  	}
+	  }
+	}
+	@media screen and (min-width: 992px){
+		width: 100% !important;
+	}
+}
+.select2-container--open .select2-dropdown{
+	.g-in;
+}
+
+.select2-results__options{
+	li{
+  	.font-size_line-height(8,12);
+    letter-spacing: 0;
+    border-top: 1px solid #ddd;
+    b{
+    	display: block;
+    }
+    a{
+    	display: block;
+    	padding: 6px;
+    	position: relative;
+    	margin: -6px;
+    	&:hover{
+    		color:#ffffff;
+    		background-color: #9b7d54;
+    	}
+    }
+    &.select2-results__option--highlighted {
+		}
+	}
+}

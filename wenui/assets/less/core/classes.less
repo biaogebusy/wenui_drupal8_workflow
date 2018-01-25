@@ -1,0 +1,300 @@
+/* basic */
+.g-c{
+  margin-left:auto;
+  margin-right:auto;
+}
+.t-c{
+  text-align: center;
+}
+.t-r{
+  text-align: right;
+}
+.t-l{
+  text-align: left;
+}
+.f-l{
+  float: left;
+}
+.f-r{
+  float: right;
+}
+
+.d_l{
+  display: inline;
+}
+.d_b{
+  display: block;
+}
+.d_ib{
+  display: inline-block;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+.bg-base{
+  background-color:@bg-base;
+}
+.bg-lighter{
+  background-color: @bg-lighter;
+}
+
+.text-base{
+  color:@text-color;
+}
+.text-light{
+  color:@text-color-light;
+}
+.text-lighter{
+  color: @text-color-lighter;
+}
+
+.size-lr{
+  font-size: @font-size-larger;
+}
+.size-l{
+  font-size: @font-size-larg;
+}
+.size-b{
+  font-size: @font-size;
+}
+.size-s{
+  font-size: @font-size-small;
+}
+.size-m{
+  font-size: @font-size-mini;
+}
+
+.oneline{
+  white-space:nowrap;
+}
+
+/* Box Sizing */
+.g-out{
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.g-in{
+  overflow: visible;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+/* hidden */
+.h-t{
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  border: 0;
+  }
+
+.h-b{
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+  }
+
+/* ClearFix */
+.clearfix{
+  &:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+  }
+}
+
+/* Scroll */
+.webkit-touch{
+  .g-in;
+  max-height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+          overflow-scrolling: touch;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+/* text overflow */
+.text-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Full Screen */
+.full-screen{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom:0;
+  left:0;
+}
+
+/* Hide elements */
+.hidden{
+  display: none;
+}
+.invisible {
+  visibility: hidden;
+}
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+  &.focusable:active,
+  &.focusable:focus{
+    position: static !important;
+    clip: auto;
+    overflow: visible;
+    height: auto;
+    width: auto;
+  }
+}
+
+/* radius circle */
+.radius-circle{
+  .radius-base(50%);
+  img{
+    .radius-base(50%);
+  }
+}
+
+/* justified */
+.justified{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  position: relative;
+  vertical-align: middle;
+}
+.justified-item{
+  vertical-align: top;
+  display: table-cell;
+  float: none;
+  border-collapse: separate;
+}
+
+.y-m{
+  position: absolute;
+  top: 50%;
+  .transform(translateY(-50%));
+}
+.x-m{
+  position: absolute;
+  left: 50%;
+  .transform(translateX(-50%));
+}
+
+.x-y-m{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  .transform(translate(-50%, -50%));
+}
+
+.z-wrapper{
+  position: relative;
+  z-index: 1;
+  .z-target{
+    position: absolute;
+    z-index: 2;
+    &.top{
+      top: 0;
+    }
+    &.right{
+      right: 0;
+    }
+    &.bottom{
+      bottom: 0;
+    }
+    &.left{
+      left: 0;
+    }
+  }
+}
+
+
+/* fixed */
+.fixed-bar(){
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+/*  */
+.disabled,
+.disabled:hover{
+  background-color: @element-disabled-bg;
+  border-color: @element-disabled-border !important;
+  color: @element-disabled-color;
+  cursor: not-allowed !important;
+  a,a:hover{
+    background-color: none;
+    border-color: none;
+    color: inherit;
+    cursor: inherit;
+  }
+}
+// WebKit-style focus
+.tab-focus() {
+  // Default
+  outline: thin dotted;
+  // WebKit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+
+/* Fade */
+.fade {
+  opacity: 0;
+  .transition(opacity .15s linear);
+  &.in {
+    opacity: 1;
+  }
+}
+
+/* Images */
+img{
+  max-width: 100%;
+  height: auto;
+  &.img-full{
+    display: block;
+    width:100%;
+  }
+  .img-full &{
+    display: block;
+    width:100%;
+  }
+  &.img-desaturate {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+  }
+}
+
+.avatar{
+  .g-in;
+  img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

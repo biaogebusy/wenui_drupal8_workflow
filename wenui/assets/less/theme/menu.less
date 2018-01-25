@@ -1,0 +1,65 @@
+/* ------
+   Menu Style
+------ */
+.menu{
+}
+
+
+
+
+
+/* ------
+   Header
+------ */
+.nav-u{
+	.f-r;
+	.menu-block{
+		ul{
+			li{
+				display: inline-block;
+				.outside-min-l;
+				a{
+					&:link,
+					&:visited{
+						color:@site-base;
+					}
+					&:hover{
+    				color: @text-color-dark;
+					}
+				}
+			}
+		}
+	}
+}
+
+.nav-menu{
+	display: block;
+	li{
+		float: left;
+		a{
+			display: block;
+			.inside-min;
+			font-size: @h3;
+			&:link,
+			&:visited{
+			}
+		}
+	}
+}
+.nav-m{
+	clear: right;
+	float: right;
+	.nav-menu;
+	li{
+		.f-r;
+		&:last-child{
+			a{
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+
+
+

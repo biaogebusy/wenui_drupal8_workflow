@@ -1,0 +1,153 @@
+/* =============================================================================
+   Button
+   ========================================================================== */
+.btn{
+  .g-in;
+  overflow: hidden;
+  background-image: none;
+  background-color: transparent;
+  border:1px solid transparent;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  white-space: nowrap;
+  padding:7px 14px;
+  outline: 0;
+  line-height: 1;
+  letter-spacing: 1px;
+  &:hover{
+    .opacity(.85);
+  }
+  &:hover,
+  &:focus,
+  &.focus {
+    text-decoration: none;
+  }
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    .opacity(.55);
+    &:before{
+      .opacity(.55);
+    }
+  }
+  &.btn-clear{
+    padding: 0;
+    &:after{
+      display: none;
+    }
+  }
+}
+
+.btn-mini{
+  padding: @btn-small-padding;
+  font-size: @font-size-small;
+}
+
+.btn-base{
+  background-color: @btn-bg;
+  color:@btn-color;
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: @btn-bg;
+    color:@btn-color;
+  }
+}
+.btn-base-outline{
+  background-color: @btn-outline-bg;
+  border-color: @btn-outline-border-color;
+  color:@btn-outline-color;
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: @btn-outline-color;
+    border-color: @btn-outline-border-color;
+    color: @btn-outline-bg;
+  }
+}
+
+.btn-status{
+  background-color: @color-status-bg;
+  color: #ffffff;
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: @color-status;
+    color: #ffffff;
+  }
+}
+
+.btn-status-outline{
+  border-color: @color-status-bg;
+  color: @color-status;
+  &:hover,
+  &:focus,
+  &.focus {
+    border-color: @color-status;
+    color: @color-status;
+  }
+}
+
+.btn-info{
+  background-color: @color-info-bg;
+  color:#ffffff;
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: @color-info-bg;
+    color: #ffffff;
+  }
+}
+
+
+.btn-error{
+  background-color: @color-error-bg;
+  color:#ffffff;
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: @color-error-bg;
+    color: #ffffff;
+  }
+}
+
+.btn-gray{
+  background-color: gray;
+  color:#ffffff;
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: gray;
+    color:#ffffff;
+  }
+}
+.btn-gray-outline{
+  background-color: transparent;
+  border-color: gray;
+  color:gray;
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: transparent;
+    border-color: gray;
+    color:gray;
+  }
+}
+
+.btn-circle{
+  .radius-base();
+}
+
+/* Btn Actions */
+.btn-actions{
+
+}

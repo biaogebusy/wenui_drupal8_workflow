@@ -1,0 +1,15 @@
+wenui_layout_media_card:
+  label: Media Card Detail
+  category: 'WenUI'
+  path: layouts/layout_media_card
+  icon: layout_media_card.png
+  template: layout-media-card
+  regions:
+    layout_media:
+      label: Media
+    layout_title:
+      label: Title
+    layout_body:
+      label: Body
+    layout_time:
+      label: Time

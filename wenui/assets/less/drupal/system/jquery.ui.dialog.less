@@ -1,0 +1,23 @@
+/* jquery.ui.dialog */
+.ui-dialog{
+  .radius-base();
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  max-height: 80%;
+  overflow: hidden;
+  overflow-y: auto;
+  .ui-dialog-title{
+  	font-size: @h4;
+  }
+  .ui-dialog-buttonpane{
+  	padding-top: 7px;
+  	padding-bottom: 7px;
+  	.radius-base(3px 3px 0 0);
+  	border-top: 1px solid @border-color;
+  	text-align: center;
+		.button{
+			.outside-min-lr;
+		}
+  }
+}

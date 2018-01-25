@@ -1,0 +1,90 @@
+/* =============================================================================
+   Switch
+   ========================================================================== */
+.form-switch{
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: .7rem;
+  height: .42rem;
+  line-height: .42rem;
+  margin-bottom: 0;
+}
+.form-item{
+  .form-switch{
+    float:right;
+  }
+  &.form-item-switch{
+    .clearfix;
+    .inside-small;
+    line-height: .42rem;
+  }
+}
+.form-switch-input{
+  .full-screen;
+  padding: 0;
+  margin: 0;
+  opacity: 0.001;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  &:checked + .form-switch-toggle{
+    background-color: @switch-color;
+  }
+  &:checked + .form-switch-toggle:before{
+    -webkit-transform: translateX(.29rem);
+    -moz-transform: translateX(.29rem);
+    -ms-transform: translateX(.29rem);
+    -o-transform: translateX(.29rem);
+    transform: translateX(.29rem);
+  }
+  &:not(:checked) + .switch__toggle:before {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  &:disabled + .switch__toggle {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+.form-switch-toggle{
+  .full-screen;
+  background-color: @bg-light;
+  -webkit-border-radius: .3rem;
+  border-radius: .3rem;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  &,&:before{
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.35s;
+    -moz-transition-duration: 0.35s;
+    -o-transition-duration: 0.35s;
+    transition-duration: 0.35s;
+  }
+  &:before{
+    content: '';
+    background-color: #fff;
+    -webkit-border-radius: .35rem;
+    border-radius: .35rem;
+    height: .35rem;
+    width: .35rem;
+    position: absolute;
+    left: .04rem;
+    top: .04rem;
+    -webkit-transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+    -moz-transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+    -o-transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+  }
+}

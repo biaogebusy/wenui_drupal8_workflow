@@ -1,0 +1,39 @@
+// tab
+.panel-tabs{
+  .tab-nav{
+    border-bottom: 2px solid @site-base;
+    display: block;
+    .clearfix;
+    li{
+      .g-in;
+      float: left;
+      position: relative;
+      overflow: hidden;
+      margin-top: -2px;
+      margin-bottom: -2px;
+      a{
+        .btn;
+        font-size: @font-size;
+        border: 2px solid transparent;
+        color:@global-color-dark;
+        padding: 14px 21px;
+      }
+      &.active{
+        a{
+          cursor: default;
+          border-color:@site-base;
+          border-bottom-color:#ffffff;
+        }
+      }
+    }
+  }
+  .tab-content{
+    .tab-pane{
+      display: none;
+    }
+    .active{
+      display: block;
+    }
+  }
+}
+

@@ -1,0 +1,199 @@
+/**
+ * The dropbutton styling.
+ *
+ * A dropbutton is a widget that displays a list of action links as a button
+ * with a primary action. Secondary actions are hidden behind a click on a
+ * twisty arrow.
+ *
+ * The arrow is created using border on a zero-width, zero-height span.
+ * The arrow inherits the link color, but can be overridden with border colors.
+ */
+ .dropbutton-wrapper{
+  height: @element-height;
+  a{
+    color:#ffffff;
+  }
+  .dropbutton-widget{
+    .dropbutton{
+      visibility: visible;
+      background-color: @color-info !important;
+      .radius-base();
+      li{
+        margin-bottom: 0;
+        a{
+          .g-in;
+          height: @element-height;
+          line-height: @element-height;
+          white-space:nowrap;
+          .inside-lr;
+          padding-right: @element-height + @space;
+        }
+        &.dropbutton-action{
+          a,.form-submit{
+            display: block;
+            color:#ffffff;
+            margin-right: 0 !important;
+            &:hover{
+              color: @text-color !important;
+            }
+          }
+        }
+        &.dropbutton-toggle{
+          padding-right: 0;
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          right: 0; /* LTR */
+          display: block;
+          text-indent: 110%;
+          white-space: nowrap;
+          border-left: 1px solid @color-success;
+          width: @element-height;
+          .dropbutton-arrow {
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-style: solid;
+            border-width: 0.3333em 0.3333em 0;
+            display: block;
+            height: 0;
+            line-height: 0;
+            position: absolute;
+            right: 40%; /* 0.6667em; */ /* LTR */
+            top: 50%;
+            margin-top: -0.1666em;
+            width: 0;
+            overflow: hidden;
+          }
+          button{
+            .radius-base(0 3px 3px 0);
+            color: @state-info-border;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            display: block;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            outline: none;
+            &:hover{
+              color: @text-color;
+              outline: initial;
+            }
+          }
+        }
+        &.secondary-action{
+          display: none;
+          .radius-base(0 0 3px 3px);
+          border-top: 1px solid @color-success;
+          a,.form-submit{
+            display: block;
+            .radius-base(0) !important;
+            width: 100%;
+            &:hover{
+              .radius-base(0) !important;
+            }
+          }
+          &:last-child{
+            a,.form-submit{
+              .radius-base(0 0 3px 3px) !important;
+              &:hover{
+                .radius-base(0 0 3px 3px) !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.open{
+    max-width: none;
+    z-index: 100;
+    .dropbutton-widget{
+      max-width: none;
+      .radius-base(3px 3px 3px 0);
+      .dropbutton{
+        li{
+          &.dropbutton-action{
+            a,.form-submit{
+              .radius-base(3px 0 0 0);
+            }
+          }
+          &.dropbutton-toggle{
+            .dropbutton-arrow{
+              border-bottom: 0.3333em solid;
+              border-top-color: transparent;
+              top: 0.7667em;
+            }
+            button{
+              color: @text-color;
+            }
+          }
+          &.secondary-action{
+            display: block;
+            a,.form-submit{
+              .radius-base(3px 0 0 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.js{
+  .dropbutton-wrapper,
+  .dropbutton-widget{
+    display: block;
+    position: relative;
+  }
+  .dropbutton-multiple{
+    .dropbutton-widget{
+      background-color: @color-info;
+      display: block;
+      .radius-base;
+      height: @element-height;
+    }
+  }
+  .form-actions{
+    .dropbutton-widget {
+      position: static;
+    }
+  }
+  td{
+    .dropbutton-wrapper {
+      min-height: @element-height;
+    }
+    .dropbutton-widget {
+      // position: absolute;
+    }
+    .dropbutton-multiple {
+      max-width: 100%;
+      .dropbutton-action{
+        a,input,button{
+          width: auto;
+        }
+      }
+    }
+  }
+  @media screen and (max-width:600px) {
+    .dropbutton-wrapper{
+      width: 100%;
+    }
+  }
+}
+
+
+/* Splitbuttons */
+@media screen and (min-width:600px) {
+  .form-actions .dropbutton-wrapper {
+    float: left; /* LTR */
+    .outside-r;
+  }
+  [dir="rtl"] .form-actions .dropbutton-wrapper {
+    float: right;
+    .outside-l;
+  }
+}

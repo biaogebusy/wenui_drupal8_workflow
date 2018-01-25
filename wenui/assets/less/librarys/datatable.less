@@ -1,0 +1,199 @@
+/* ============
+   Select2
+   ============ */
+//@import (less) "node_modules/datatables.net-dt/css/jquery.dataTables.css";
+
+/* Custom */
+.dataTables_wrapper{
+  font-size: @font-size-small;
+  position: relative;
+  clear: both;
+  *zoom: 1;
+  zoom: 1;
+  .clearfix;
+  .dataTables_length{
+    .outside;
+    float: left;
+    label{
+      font-weight: normal;
+    }
+  }
+  table.dataTable{
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    tr{
+      &:hover{
+        td{
+          background-color: #e0e1e2;
+        }
+      }
+      &.selected {
+        th,td{
+          background-color: @border-color;
+          color:@table-active;
+        }
+      }
+      .dt-justify,
+      .dt-head-justify,
+      .dt-body-justify{
+        text-align: justify;
+      }
+      .dt-left,
+      .dt-head-left,
+      .dt-body-left{
+        text-align: left;
+      }
+      .dt-right,
+      .dt-head-right,
+      .dt-body-right{
+        text-align: right;
+      }
+      .dt-center,
+      .dt-head-center,
+      .dt-body-center{
+        text-align: center;
+      }
+      .dt-nowrap,
+      .dt-head-nowrap,
+      .dt-body-nowrap{
+        white-space: nowrap;
+      }
+      th{
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+      }
+      td{
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+      }
+    }
+    thead{
+      td,th{
+        background-repeat: no-repeat;
+        background-position: center right;
+      }
+      .sorting{
+        background-image: url("../images/sort_both.png");
+        cursor: pointer;
+        *cursor: hand;
+
+      }
+      .sorting_asc{
+        background-image: url("../images/sort_asc.png");
+        cursor: pointer;
+        *cursor: hand;
+
+      }
+      .sorting_desc{
+        background-image: url("../images/sort_desc.png");
+        cursor: pointer;
+        *cursor: hand;
+      }
+      .sorting_asc_disabled{
+        background-image: url("../images/sort_asc_disabled.png");
+      }
+      .sorting_desc_disabled{
+        background-image: url("../images/sort_desc_disabled.png");
+      }
+    }
+    &.compact{
+      thead{
+        th,td{
+          padding: 4px 17px 4px 4px;
+        }
+      }
+      tfoot{
+        th,td{
+          padding:4px 4px;
+        }
+      }
+      tbody{
+        th,td{
+          padding:4px 4px;
+        }
+      }
+    }
+    &.nowrap{
+      th,td{
+        white-space: nowrap;
+      }
+    }
+  }
+  .dataTables_filter{
+    .outside;
+    float: right;
+    label{
+      font-weight: normal;
+      input{
+        margin-left: 7px;
+      }
+    }
+  }
+  .dataTables_info{
+    .outside;
+    clear: both;
+    float: left;
+    line-height: 29px;
+  }
+  .dataTables_paginate{
+    .outside;
+    .radius-base;
+    float: right;
+    text-align: right;
+    .paginate_button,
+    .ellipsis{
+      border:1px solid @border-color;
+      color: @text-color;
+      padding: 4px 10px;
+      float: left;
+      margin-left: -1px;
+      position: relative;
+      line-height: 1.5;
+    }
+    >.paginate_button{
+      &:first-child{
+        .radius-base(4px 0 0 4px);
+      }
+      &:last-child{
+        .radius-base(0 4px 4px 0);
+      }
+    }
+    .current{
+      background-color: @bg-lighter;
+      color: @text-color-light;
+      cursor: default;
+    }
+    .disabled{
+      background-color: @bg-light;
+      color: @text-color-light;
+      cursor: default;
+    }
+  }
+  .dataTables_scroll{
+    clear:both;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .dataTables_wrapper .dataTables_info,
+  .dataTables_wrapper .dataTables_paginate {
+    float: none;
+    text-align: center;
+  }
+  .dataTables_wrapper .dataTables_paginate {
+    margin-top: 14px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .dataTables_wrapper .dataTables_length,
+  .dataTables_wrapper .dataTables_filter {
+    float: none;
+    text-align: center;
+  }
+  .dataTables_wrapper .dataTables_filter {
+    margin-top: 14px;
+  }
+}

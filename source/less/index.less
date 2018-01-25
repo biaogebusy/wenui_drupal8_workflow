@@ -1,0 +1,64 @@
+/* -----------------------------------------------------------
+-- 2017/09/26
+-- Less初始文件 index.less
+-------------------------------------------------------------- */
+@import (less) "../plugins/animate.min.css";
+
+/* ===========================================================
+-- 使用 normalize.css 初始化浏览器样式
+-------------------------------------------------------------- */
+@import (less) "node_modules/normalize.css/normalize.css";
+
+/* ===========================================================
+-- 如需使用本主题自带UI请参照说明使用，使用其他UI请注释下面@import
+-- Import WENUI 根据需要引入文件
+-- 使用说明：
+-- * @import "let.less";(必须引入定义文件,可修改值，不可删除)
+-- * @import "desktop.less";(桌面开发初始样式，可以任意修改)
+-- * @import "wenui/assets/less/wenui.less";(基础UI文件)
+-- * Wenui components @see ./let.less;
+-------------------------------------------------------------- */
+
+@import "wenui/assets/less/wenui.less";
+
+// THEME LESS FILES
+
+/* Core */
+@import "./let.less";
+@import "./app.less";
+
+/* Use Drupal Html S */
+@import "wenui/assets/less/drupal/system/form.less";
+
+
+
+/* ===========================================================
+-- 样式开发
+-- 文件目录：./wwei/
+-- 文件：./wwei/wwei.less
+-- 根据业务需要自行修改文件名和文件夹名称
+-- 所有自定义样式请写在这个文件/文件夹里面
+-------------------------------------------------------------- */
+
+@import "./theme/theme.less";
+
+
+/* ===========================================================
+-- 已初始化插件样式部分合集
+-- 根据需要使用
+-------------------------------------------------------------- */
+// @import "wenui/assets/less/librarys/mmenu.less";
+// @import "wenui/assets/less/librarys/bootstrap-collapse.less";
+// @import "wenui/assets/less/librarys/bootstrap-tab.less";
+// @import "wenui/assets/less/librarys/bootstrap-dropdown.less";
+// @import "wenui/assets/less/librarys/bootstrap-modal.less";
+// @import "wenui/assets/less/librarys/bootstrap-alert.less";
+// @import "wenui/assets/less/librarys/bootstrap-datepicker.less";
+// @import "wenui/assets/less/librarys/swiper2.less";
+// @import "wenui/assets/less/librarys/select2.less";
+// @import "wenui/assets/less/librarys/waypoint.less";
+// @import "wenui/assets/less/librarys/waves.less";
+// @import "wenui/assets/less/librarys/swiper3.less";
+// @import "wenui/assets/less/librarys/datatable.less";
+// @import "wenui/assets/less/librarys/jqgrid.less";
+

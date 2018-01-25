@@ -1,0 +1,159 @@
+/* =============================================================================
+   Checkbox && Radio Button
+   ========================================================================== */
+@import "./animate.less";
+
+/* ------
+@chooses-size:20px;
+@chooses-color: @site-base;
+----- */
+
+.btn-chooses{
+  background-color: #ffffff;
+  .btn-choose{
+    &:not(:last-child){
+      .one-line();
+    }
+  }
+}
+
+.btn-choose-square{
+  .btn-choose-mark{
+    &:before{
+      content:'\e63c';
+    }
+    &:after{
+      content:'\e61a';
+    }
+  }
+}
+
+.btn-choose-round{
+  .btn-choose-mark{
+    &:before{
+      content:'\e6d4';
+    }
+    &:after{
+      content:'\e6ab';
+    }
+  }
+}
+
+.btn-choose{
+  min-height: @chooses-size;
+  .inside-min-tb;
+  padding-left: @chooses-size + 5;
+  .g-in;
+  display: block;
+  text-align: left;
+  position: relative;
+  .btn-choose-mark{
+    display: block;
+    &:before,
+    &:after{
+      .icon;
+      font-size: @chooses-size;
+
+      .g-in;
+      display: block;
+      position: absolute;
+      top:50%;
+      margin-top: -@chooses-size/2;
+
+      -webkit-transition-property: all;
+      -moz-transition-property: all;
+      -o-transition-property: all;
+      transition-property: all;
+      -webkit-transition-duration: 0.35s;
+      -moz-transition-duration: 0.35s;
+      -o-transition-duration: 0.35s;
+      transition-duration: 0.35s;
+      -webkit-transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+      -moz-transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+      -o-transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+      transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
+    }
+    &:before{
+    }
+    &:after{
+    }
+  }
+  >.btn-choose-mark{
+    visibility: visible;
+    z-index: 1;
+    .y-m;
+    left: 0;
+    height: @chooses-size;
+    &:before{
+      .animating;
+    }
+    &:after{
+      color: @chooses-color;
+      .opacity(0);
+    }
+  }
+  >.btn-choose-input{
+    visibility: hidden;
+    position: absolute;
+    // &:hover{
+    //   + .btn-choose-mark{
+    //     &:before{
+    //       .opacity(0);
+    //     }
+    //     &:after{
+    //       .opacity(.35);
+    //     }
+    //   }
+    // }
+    &:checked{
+      + .btn-choose-mark{
+        &:before{
+          .opacity(0);
+        }
+        &:after{
+          .opacity(1);
+          .animating;
+          color:@chooses-color;
+        }
+      }
+    }
+    // &[disabled]{
+    //   + .btn-choose-mark{
+    //     &:after{
+    //       .opacity(.75);
+    //       color: @element-disabled-color;
+    //     }
+    //   }
+    // }
+  }
+}
+
+
+.btn-choose-disabled{
+  color: @element-disabled-color;
+  .btn-choose-mark{
+    &:before{
+      .opacity(.85) !important;
+      color: @element-disabled-color !important;
+    }
+    &:after{
+      .opacity(0) !important;
+    }
+  }
+  >.btn-choose-input{
+    visibility: hidden;
+    position: absolute;
+    &:checked{
+      + .btn-choose-mark{
+        &:before{
+          .opacity(0)!important;
+        }
+        &:after{
+          .opacity(.85) !important;
+          color: @element-disabled-color !important;
+        }
+      }
+    }
+  }
+}
+

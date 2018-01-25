@@ -1,0 +1,50 @@
+/* =============================================================================
+   Labels
+   ========================================================================== */
+.labels{
+  padding-bottom: 15px;
+  .label{
+    margin-right: 3px;
+  }
+}
+.label{
+  .radius-base(1em);
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  padding:0.3em .8em;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  font-size: @font-size-mini;
+  line-height: 1;
+  &.label-base{
+    background-color: @label-bg-color;
+    border-color: @label-border-color;
+    >i{
+      color:@label-icon-color;
+    }
+  }
+  &.label-success{
+    background-color: @label-success-bg;
+    color:#ffffff;
+  }
+  &.label-info{
+    background-color: @label-info-bg;
+    color:#ffffff;
+  }
+  &.label-fail{
+    background-color: @label-fail-bg;
+    color:#ffffff;
+  }
+  &.label-warning{
+    background-color: @label-warning-bg;
+    color:#ffffff;
+  }
+  >i{
+    .icon;
+    font-size: 102%;
+    margin-top: 3px;
+  }
+}

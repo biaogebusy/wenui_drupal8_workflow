@@ -1,0 +1,164 @@
+name: WenUI
+type: theme
+description: Drupal8 Theme, Wenui
+package: Core
+
+base theme: false
+
+# Add a new CSS file:
+# stylesheets:
+#   all:
+#     - main.css
+
+# Override a CSS file:
+# stylesheets-override:
+#   - ajax-progress.module.css
+
+# Remove a CSS file:
+stylesheets-remove:
+  - core/modules/user/css/user.icons.admin.css
+  - core/modules/shortcut/css/shortcut.theme.css
+  - core/modules/shortcut/css/shortcut.icons.theme.css
+
+# add Custom Libraries
+libraries:
+  - wenui/drupal
+  - wenui/build
+  # - wwei/wencore.highlight
+  # - wwei/wencore.mmenu
+
+libraries-extend:
+#   core/drupal.ajax:
+#     - js/drupal/drupal.ajax
+#   core/drupal.autocomplete:
+#     - js/drupal/drupal.autocomplete
+#   core/drupal.form:
+#     - js/drupal/drupal.form
+#   core/drupal.progress:
+#     - js/drupal/drupal.progress
+#   core/drupal.states:
+#     - js/drupal/drupal.states
+#   core/drupal.tabledrag:
+#     - js/drupal/drupal.tabledrag
+#   views/views.ajax:
+#     - js/drupal/views.ajax
+
+libraries-override:
+# Core Libraries
+#   !collapse.js need Modernizr
+#   core/modernizr: false
+#   core/drupal.batch: css/drupal/drupal.batch
+#   core/drupal.collapse: css/drupal/collapse
+    core/drupal.dropbutton:
+      # js:
+      #   misc/dropbutton/dropbutton.js: {}
+      css:
+        component:
+          misc/dropbutton/dropbutton.css: false
+    core/drupal.vertical-tabs:
+      # js:
+      #   # Load before core/drupal.collapse.
+      #   misc/vertical-tabs.js: { weight: -1 }
+      css:
+        component:
+          misc/vertical-tabs.css: false
+    core/jquery.ui:
+      css:
+        # component:
+        #   assets/vendor/jquery.ui/themes/base/core.css: {}
+        theme:
+          assets/vendor/jquery.ui/themes/base/theme.css: false
+    core/jquery.ui.button:
+      css:
+        component:
+          assets/vendor/jquery.ui/themes/base/button.css: false
+    core/jquery.ui.dialog:
+      css:
+        component:
+          assets/vendor/jquery.ui/themes/base/dialog.css: false
+# System Libraries
+#   system/admin: false
+    system/base: false
+     # css:
+     #   component:
+     #     css/components/ajax-progress.module.css: false
+     #     css/components/align.module.css: false
+     #     css/components/autocomplete-loading.module.css: false
+     #     css/components/fieldgroup.module.css: false
+     #     css/components/container-inline.module.css: false
+     #     css/components/clearfix.module.css: false
+     #     css/components/details.module.css: false
+     #     css/components/hidden.module.css: false
+     #     css/components/item-list.module.css: false
+     #     css/components/js.module.css: false
+     #     css/components/nowrap.module.css: false
+     #     css/components/position-container.module.css: false
+     #     css/components/progress.module.css: false
+     #     css/components/reset-appearance.module.css: false
+     #     css/components/resize.module.css: false
+     #     css/components/sticky-header.module.css: false
+     #     css/components/system-status-counter.css: false
+     #     css/components/system-status-report-counters.css: false
+     #     css/components/system-status-report-general-info.css: false
+     #     css/components/tabledrag.module.css: false
+     #     css/components/tablesort.module.css: false
+     #     css/components/tree-child.module.css: false
+# @Toolbar Libraries
+    toolbar/toolbar: false
+    toolbar/toolbar.menu: false
+    toolbar/toolbar.escapeAdmin: false
+# @Contextual Libraries
+    contextual/drupal.contextual-links: false
+    contextual/drupal.contextual-toolbar: false
+# @Quickedit Libraries
+    # quickedit/quickedit: false
+    # quickedit/quickedit.inPlaceEditor.form: false
+    # quickedit/quickedit.inPlaceEditor.plainText: false
+# @Others Libraries
+    # filter/drupal.filter: css/drupal/drupal.filter
+    # text/drupal.text: css/drupal/drupal.text
+# @Custom Module Libraries
+    admin_toolbar/toolbar.tree: false
+    admin_toolbar_tools/toolbar.icon: false
+
+# name space @WENUI
+component-libraries:
+  WENUI:
+    paths:
+      - assets/templates
+      - templates
+
+regions:
+  topbar         : Topbar
+  header         : Header
+  nav            : Nav
+  primary_menu   : Primary menu
+  secondary_menu : Secondary menu
+  highlighted    : Highlighted
+  help           : Help
+  title          : Title
+  content        : Content
+  sidebar_first  : Left sidebar
+  sidebar_second : Right sidebar
+  footer         : Footer
+  bottom         : Bottom
+
+  # Add Custom Region
+  modal          : Modal
+  outside        : Outside
+
+features:
+  logo: true
+  name: true
+  slogan: true
+  node_user_picture: true
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  main_menu: true
+  secondary_menu: true
+
+# Info added By 2016-10-27
+version: 1.3.0
+core: 8.x
+project: 'wenui'

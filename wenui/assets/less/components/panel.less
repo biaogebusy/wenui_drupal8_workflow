@@ -1,0 +1,32 @@
+/* =============================================================================
+   Panel Item
+   ========================================================================== */
+.panel{
+  .clearfix;
+  .panel-title{
+    background-color: @panel-title-bg;
+    color: @panel-title-color;
+    .inside-min;
+  }
+  .panel-body{
+    .clearfix;
+  }
+  .panel-row{
+    .inside-min;
+  }
+}
+
+.panel-card{
+  border: @panel-card-border;
+  background-color: @panel-card-bg;
+  .radius-base(@panel-card-radius);
+  .panel-title{
+    border-bottom:@panel-card-border;
+  }
+  .panel-body{
+  }
+  .panel-bar{
+    position: relative;
+    .inside-min;
+  }
+}

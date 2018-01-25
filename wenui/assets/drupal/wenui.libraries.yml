@@ -1,0 +1,48 @@
+# Theme Base
+
+drupal:
+  css:
+    theme:
+      css/main.css: {}
+  js:
+    js/drupal.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - core/underscore
+
+build:
+  css:
+    theme:
+     build/init.css: {}
+  js:
+     build/init.js: {}
+  dependencies:
+    - core/jquery
+    - core/underscore
+    - core/drupalSettings
+
+
+# Quick PLugins
+# Use Need: Bower install source first
+
+# wencore.highlight:
+#   css:
+#     theme:
+#       bower_components/highlight.js/src/styles/default.css: {}
+#   js:
+#     js/wencore/highlight.js: {}
+#     bower_components/highlight.js/src/highlight.js: {}
+#   dependencies:
+#     - core/jquery
+
+# wencore.mmenu:
+#   css:
+#     theme:
+#       bower_components/jQuery.mmenu/dist/jquery.mmenu.all.css: {}
+#   js:
+#     bower_components/jQuery.mmenu/dist/jquery.mmenu.all.js: {}
+#   dependencies:
+#     - core/jquery

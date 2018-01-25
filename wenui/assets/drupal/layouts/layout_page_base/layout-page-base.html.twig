@@ -1,0 +1,78 @@
+{% if content %}
+<div id="layout-page" {{attributes.addClass('page')}}>
+
+  {% if content.layout_header %}
+    <div class="header" id="layout-header">
+      <div class="layout-inner">
+        {{ content.layout_header }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if content.layout_nav %}
+    <div class="navbar" id="layout-navbar">
+      <div class="layout-inner">
+        {{ content.layout_nav }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if content.layout_sidebar_left|render|striptags and content.layout_sidebar_right|render|striptags %}
+    {% set content_class       = 'col-md-7' %}
+    {% set sidebar_left_class  = 'col-md-3' %}
+    {% set sidebar_right_class = 'col-md-3' %}
+  {% elseif (content.layout_sidebar_right|render|striptags) %}
+    {% set content_class       = 'col-md-9' %}
+    {% set sidebar_right_class = 'col-md-4' %}
+  {% elseif (content.layout_sidebar_left|render|striptags) %}
+    {% set content_class       = 'col-md-9 col-sm-12' %}
+    {% set sidebar_left_class  = 'col-md-3 col-sm-12' %}
+  {% else %}
+    {% set content_class       = 'col-sm-12' %}
+  {% endif %}
+
+  <div class="main" id="layout-main">
+
+    {% if content.layout_highlighted %}
+      <div class="highlighted" id="layout-highlighted">
+        <div class="layout-inner">
+          {{ content.layout_highlighted }}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="row">
+      {% if sidebar_left_class %}
+        <div class="{{ sidebar_left_class }}" role="sidebar" id="layout-sidebar-left">
+          <div class="layout-inner">
+            {{ content.layout_sidebar_left }}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if content_class %}
+        <div class="content {{ content_class }}" id="layout-content">
+          <div class="layout-inner">
+            {{ content.layout_content }}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if sidebar_right_class %}
+        <div class="{{ sidebar_right_class }} sidebar" role="sidebar" id="layout-sidebar-right">
+          <div class="layout-inner">
+            {{ content.layout_sidebar_right }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if content.layout_footer %}
+    <div class="footer" id="layout-footer">
+      {{ content.layout_footer }}
+    </div>
+  {% endif %}
+
+</div>
+{% endif %}

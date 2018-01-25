@@ -1,0 +1,27 @@
+{
+  "dir" : "",
+  "index":{
+    "html":"./source/index.html",
+    "script":"./source/scripts/index.js",
+    "less":"./source/less/index.less"
+  },
+  "build":{
+    "script":"init.js",
+    "css":"init.css"
+  },
+  "less": [
+    "./source/less/*.less",
+    "./source/less/**/*.less",
+    "./source/less/**/**/*.less",
+    "./source/less/**/**/**/*.less",
+    "./assets/less/*.less",
+    "./assets/less/**/*.less",
+    "./assets/less/**/**/*.less",
+    "./assets/less/**/**/**/*.less"
+  ],
+  "scripts": [
+    "./source/scripts/*.js",
+    "./source/scripts/**/*.js"
+  ],
+  "images": ["./images/"]
+}
