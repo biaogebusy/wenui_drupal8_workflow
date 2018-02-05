@@ -1,4 +1,4 @@
-const Vue =    require('vue/dist/vue');
+const Vue =    appRequire('vue/dist/vue');
 
 module.exports =  Vue.extend({
   props: ['value','type'],

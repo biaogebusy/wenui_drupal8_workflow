@@ -1,9 +1,9 @@
-const path       = window.require('path');
-const fs         = window.require('fs');
+const path       = appRequire('path');
+const fs         = appRequire('fs');
 
-const Vue        = require('vue/dist/vue');
-const _          = require('underscore');
-const store      = require('store');
+const Vue        = appRequire('vue/dist/vue');
+const _          = appRequire('underscore');
+const store      = appRequire('store');
 
 const Common     = require('../data/common.js');
 

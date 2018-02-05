@@ -14,6 +14,8 @@ const url = require('url')
 let mainWindow;
 let logo = path.join(__dirname, 'source/images/logo.png');
 
+let willClose = false;
+
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
@@ -25,11 +27,13 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true,
-  }))
+  // mainWindow.loadURL(url.format({
+  //   pathname: path.join(__dirname, 'index.html'),
+  //   protocol: 'file:',
+  //   slashes: true,
+  // }))
+  mainWindow.loadURL('file://' + __dirname + '/index.html');
+
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -54,6 +58,12 @@ function createWindow () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
+
+
+app.on('before-quit', function () {
+    willClose = true;
+});
+
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {

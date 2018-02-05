@@ -1,12 +1,12 @@
 "use strict";
 
-const path     = window.require('path');
-const fs       = window.require('fs');
-const electron = window.require('electron');
+const path     = appRequire('path');
+const fs       = appRequire('fs');
+const electron = appRequire('electron');
 const remote   = electron.remote;
 
-const gulp     = window.require('gulp');
-const store    = require('store');
+const gulp     = appRequire('gulp');
+const store    = appRequire('store');
 
 class Common {
 

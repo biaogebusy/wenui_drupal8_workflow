@@ -1,4 +1,4 @@
-const electron   = window.require('electron');
+const electron   = appRequire('electron');
 const remote     = electron.remote;
 const Menu       = remote.Menu;
 

@@ -20,6 +20,7 @@
     "build-drupal": "browserify $npm_package_drupal_theme_path/$npm_package_drupal_theme_name/js/drupal.js | uglifyjs -c -m > $npm_package_drupal_theme_path/$npm_package_drupal_theme_name/js/drupal.min.js",
     "build-images": "gulp images",
     "build": "npm run build-css & npm run build-js",
+    "packager": "electron-packager ./ DrupalWorkflow --platform=darwin --out ./OutApp --version 0.0.3 --overwrite --icon=./app/logo.icns",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "babel": {
@@ -79,8 +80,10 @@
   },
   "homepage": "https://github.com/wenroo/wenui",
   "dependencies": {
+    "async": "^2.6.0",
     "babel-core": "^6.26.0",
     "babel-plugin-resolver": "^1.1.0",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-resolver": "^1.1.0",
@@ -89,14 +92,18 @@
     "bower": "^1.8.2",
     "browserify": "^13.3.0",
     "del": "^2.2.2",
+    "electron": "1.7.10",
+    "electron-packager": "^10.1.2",
     "fs": "0.0.1-security",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
     "gulp-clean-css": "^3.9.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-exec": "^2.1.3",
     "gulp-html-version": "^1.0.1",
     "gulp-imagemin": "^3.3.0",
+    "gulp-install": "^1.1.0",
     "gulp-less": "^3.3.2",
     "gulp-load-plugins": "^1.5.0",
     "gulp-rename": "^1.2.2",
@@ -107,19 +114,14 @@
     "normalize.css": "^7.0.0",
     "path": "^0.12.7",
     "require-dir": "^0.3.2",
+    "store": "^2.0.12",
     "uglifycss": "0.0.27",
     "uglifyjs": "^2.4.10",
     "underscore": "^1.8.3",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^1.1.2",
+    "vue": "^2.4.4",
     "watchify": "^3.9.0"
   },
-  "devDependencies": {
-    "async": "^2.6.0",
-    "babel-preset-env": "^1.6.1",
-    "electron": "1.7.10",
-    "gulp-babel": "^7.0.0",
-    "store": "^2.0.12",
-    "vue": "^2.4.4"
-  }
+  "devDependencies": {}
 }

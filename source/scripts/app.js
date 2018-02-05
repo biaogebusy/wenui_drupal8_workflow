@@ -1,16 +1,16 @@
 "use strict";
 
-const path             = window.require('path');
-const fs               = window.require('fs');
+const path             = appRequire('path');
+const fs               = appRequire('fs');
 
-const gulp             = window.require('gulp');
-const electron         = window.require('electron');
+const gulp             = appRequire('gulp');
+const electron         = appRequire('electron');
 const remote           = electron.remote;
 const {dialog}         = electron.remote;
 
-const Vue        = require('vue/dist/vue');
-const _          = require('underscore');
-const store      = require('store');
+const Vue        = appRequire('vue/dist/vue');
+const _          = appRequire('underscore');
+const store      = appRequire('store');
 
 const Common     = require('./data/common.js');
 

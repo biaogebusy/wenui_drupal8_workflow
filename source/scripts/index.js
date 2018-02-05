@@ -1,5 +1,5 @@
-var $       = jQuery = require('jquery'),
-		_       = require('underscore'),
+var $       = jQuery = window.require('jquery'),
+		_       = window.require('underscore'),
 		wenui   = require('../../assets/scripts/modules/wenui');
 
 var App = require('./app.js');

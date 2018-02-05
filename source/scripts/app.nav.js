@@ -1,14 +1,14 @@
 "use strict";
-const path       = window.require('path');
+const path       = appRequire('path');
 
-const electron   = window.require('electron');
+const electron   = appRequire('electron');
 const {remote, dialog}     = electron.remote;
 
 const Common     = require('./data/common.js');
 
-const Vue        = require('vue/dist/vue');
-const _          = require('underscore');
-const store      = require('store');
+const Vue        = appRequire('vue/dist/vue');
+const _          = appRequire('underscore');
+const store      = appRequire('store');
 // Component
 module.exports =  Vue.extend({
   props:['current','storage'],

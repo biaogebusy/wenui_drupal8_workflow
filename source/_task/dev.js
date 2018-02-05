@@ -1,20 +1,20 @@
-const fs          = require('fs');
-const path        = window.require('path');
-const del         = require('del');
-const async       = require('async');
-const browserify  = require('browserify');
-const babelify    = require('babelify');
-const buffer      = require('vinyl-buffer');
-const source      = require('vinyl-source-stream');
+const fs          = appRequire('fs');
+const path        = appRequire('path');
+const del         = appRequire('del');
+const async       = appRequire('async');
+const browserify  = appRequire('browserify');
+const babelify    = appRequire('babelify');
+const buffer      = appRequire('vinyl-buffer');
+const source      = appRequire('vinyl-source-stream');
 
-const gulp      = require('gulp');
-const g         = require('gulp-load-plugins')();
-const less      = require('gulp-less');
-const smaps      = require('gulp-sourcemaps');
-const install   = require("gulp-install");
-const minifyCSS = require('gulp-cssnano');
+const gulp      = appRequire('gulp');
+const g         = appRequire('gulp-load-plugins')();
+const less      = appRequire('gulp-less');
+const smaps      = appRequire('gulp-sourcemaps');
+const install   = appRequire("gulp-install");
+const minifyCSS = appRequire('gulp-cssnano');
 
-const _       = require('underscore');
+const _       = appRequire('underscore');
 const Common  = require(path.join(__dirname, '../scripts/data/common.js'));
 
 
